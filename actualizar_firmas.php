@@ -9,19 +9,19 @@ ini_set('display_errors', 1);
 require_once __DIR__ . '/config/Conexion.php';
 require_once __DIR__ . '/helpers/FirmaDigital.php';
 
-echo "<h1>🔄 ACTUALIZACIÓN DE FIRMAS</h1>";
+echo "<h1> ACTUALIZACIÓN DE FIRMAS</h1>";
 
 // Verificar que existen las llaves
 $privateKey = __DIR__ . '/keys/private_key.pem';
 $publicKey = __DIR__ . '/keys/public_key.pem';
 
 if (!file_exists($privateKey) || !file_exists($publicKey)) {
-    echo "❌ No existen las llaves OpenSSL.<br>";
+    echo "No existen las llaves OpenSSL.<br>";
     echo "Ejecuta primero: <a href='setup_llaves.php'>setup_llaves.php</a><br>";
     exit;
 }
 
-echo "✅ Llaves OpenSSL encontradas.<br><br>";
+echo "Llaves OpenSSL encontradas.<br><br>";
 
 $con = Conexion::obtenerInstancia();
 
@@ -30,12 +30,12 @@ $perfiles = $con->consultar("SELECT COUNT(*) as total FROM perfiles_laborales");
 $totalPerfiles = $perfiles[0]['total'];
 
 if ($totalPerfiles == 0) {
-    echo "📝 No hay perfiles laborales para actualizar.<br>";
+    echo "No hay perfiles laborales para actualizar.<br>";
     echo "<a href='index.php'>Volver al inicio</a>";
     exit;
 }
 
-echo "📊 Encontrados " . $totalPerfiles . " perfiles laborales.<br><br>";
+echo "Encontrados " . $totalPerfiles . " perfiles laborales.<br><br>";
 
 // Obtener todos los perfiles con sus datos
 $perfiles = $con->consultar("
@@ -81,20 +81,20 @@ foreach ($perfiles as $perfil) {
         );
         
         $actualizados++;
-        echo "✅ Perfil #{$perfil['id_perfil']} - {$perfil['colaborador_nombre']} {$perfil['colaborador_apellido']} - Firmado correctamente<br>";
+        echo "Perfil #{$perfil['id_perfil']} - {$perfil['colaborador_nombre']} {$perfil['colaborador_apellido']} - Firmado correctamente<br>";
         
     } catch (Exception $e) {
         $errores++;
-        echo "❌ Error en perfil #{$perfil['id_perfil']}: " . $e->getMessage() . "<br>";
+        echo " Error en perfil #{$perfil['id_perfil']}: " . $e->getMessage() . "<br>";
     }
 }
 
 echo "<br><hr>";
-echo "<h2>📊 Resumen:</h2>";
-echo "✅ Actualizados: <strong>$actualizados</strong><br>";
-echo "❌ Errores: <strong>$errores</strong><br>";
-echo "📊 Total: <strong>$totalPerfiles</strong><br>";
+echo "<h2>Resumen:</h2>";
+echo "Actualizados: <strong>$actualizados</strong><br>";
+echo "Errores: <strong>$errores</strong><br>";
+echo "Total: <strong>$totalPerfiles</strong><br>";
 
-echo "<br><a href='views/reporte.php'>📊 Ver reporte</a> | ";
-echo "<a href='index.php'>🏠 Volver al inicio</a>";
+echo "<br><a href='views/reporte.php'>Ver reporte</a> | ";
+echo "<a href='index.php'>Volver al inicio</a>";
 ?>
