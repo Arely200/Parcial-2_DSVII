@@ -13,32 +13,36 @@ Sistema de gestión de colaboradores y perfiles laborales — Desarrollo de Soft
 
 ```
 itech_contrataciones/
-├── config/
-│   └── Conexion.php          -> Singleton PDO
-├── controllers/
-│   ├── ColaboradorController.php
-│   └── ReporteController.php
-├── models/
-│   ├── Colaborador.php
-│   ├── PerfilLaboral.php
-│   └── Catalogo.php
-├── helpers/
-│   ├── Validator.php         -> validaciones (métodos estáticos)
-│   ├── Sanitizer.php         -> sanitización (métodos estáticos)
-│   └── FirmaDigital.php      -> firma/verificación OpenSSL
-├── views/
-│   ├── formulario.php        -> registro de colaborador
-│   ├── perfil_laboral.php    -> registro de perfil laboral (promoción)
-│   ├── reporte.php           -> reporte con indicador verde/rojo
-│   └── css/estilos.css
-├── keys/                     -> llaves OpenSSL (se generan, no se suben)
-├── database/
-│   ├── 01_catalogos.sql
-│   └── 02_principal.sql
-├── index.php
-├── exportar_excel.php
-├── setup_llaves.php
-└── .gitignore
+├── 📁 config/
+│ └── Conexion.php # Singleton PDO
+├── 📁 controllers/
+│ ├── ColaboradorController.php # Controlador de colaboradores
+│ └── ReporteController.php # Controlador de reportes
+├── 📁 models/
+│ ├── Colaborador.php # Modelo de colaboradores
+│ ├── PerfilLaboral.php # Modelo de perfiles laborales
+│ └── Catalogo.php # Catálogos del sistema
+├── 📁 helpers/
+│ ├── Validator.php # Validaciones (estáticas)
+│ ├── Sanitizer.php # Sanitización (estáticas)
+│ └── FirmaDigital.php # Firma/Verificación OpenSSL
+├── 📁 views/
+│ ├── formulario.php # Registro de colaborador
+│ ├── perfil_laboral.php # Registro de perfil laboral
+│ ├── reporte.php # Reporte con indicadores
+│ └── css/
+│ └── estilos.css # Estilos del sistema
+├── 📁 keys/ # Llaves OpenSSL (generadas)
+├── 📁 database/
+│ ├── 01_catalogos.sql # Catálogos del sistema
+│ └── 02_principal.sql # Tablas principales
+├── 📄 index.php # Página principal
+├── 📄 exportar_excel.php # Exportación a Excel
+├── 📄 setup_llaves.php # Generador de llaves OpenSSL
+├── 📄 actualizar_firmas.php # Regenerador de firmas
+├── 📄 comprobar_firmas.php # Verificador de firmas
+├── 📄 .gitignore # Archivos ignorados por Git
+└── 📄 README.md # Este archivo
 ```
 
 ## Pasos para levantar el proyecto en WAMP
