@@ -1,0 +1,5 @@
+# Nunca subir la llave privada (lección aprendida: no repetir el incidente anterior)
+/keys/private_key.pem
+
+# Archivos de configuración local / entorno
+/config/local.php

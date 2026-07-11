@@ -1,0 +1,261 @@
+/* =========================================================
+   iTECH Contrataciones - Hoja de estilos general
+   ========================================================= */
+:root {
+    --azul-oscuro: #0d3b66;
+    --azul-medio: #1d70a2;
+    --celeste: #38b6ff;
+    --verde: #2ecc71;
+    --rojo: #e74c3c;
+    --gris-claro: #f4f7fb;
+    --gris-borde: #d9e2ec;
+    --blanco: #ffffff;
+    --texto: #1e293b;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--gris-claro);
+    color: var(--texto);
+}
+
+header {
+    background: linear-gradient(135deg, var(--azul-oscuro), var(--azul-medio));
+    color: var(--blanco);
+    padding: 1.2rem 2rem;
+}
+
+header h1 {
+    margin: 0 0 0.6rem 0;
+    font-size: 1.6rem;
+}
+
+nav a {
+    color: var(--blanco);
+    text-decoration: none;
+    margin-right: 1.2rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    transition: background 0.2s;
+}
+
+nav a:hover, nav a.activo {
+    background: rgba(255,255,255,0.2);
+}
+
+main {
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 0 1.5rem 2rem;
+}
+
+main.inicio {
+    text-align: center;
+}
+
+h2 {
+    color: var(--azul-oscuro);
+    border-bottom: 3px solid var(--celeste);
+    padding-bottom: 0.4rem;
+    display: inline-block;
+}
+
+.fecha-formulario {
+    color: #607d8b;
+    font-size: 0.9rem;
+}
+
+.nota {
+    background: #eaf6ff;
+    border-left: 4px solid var(--celeste);
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 4px;
+}
+
+.formulario {
+    background: var(--blanco);
+    padding: 1.8rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(13,59,102,0.08);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem 1.5rem;
+}
+
+.formulario fieldset {
+    grid-column: 1 / -1;
+    border: 1px solid var(--gris-borde);
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.formulario legend {
+    color: var(--azul-medio);
+    font-weight: bold;
+    padding: 0 0.5rem;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+}
+
+.campo label {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--azul-oscuro);
+    margin-bottom: 0.3rem;
+}
+
+.campo input, .campo select {
+    padding: 0.55rem 0.7rem;
+    border: 1px solid var(--gris-borde);
+    border-radius: 8px;
+    font-size: 0.95rem;
+}
+
+.campo input:focus, .campo select:focus {
+    outline: none;
+    border-color: var(--celeste);
+    box-shadow: 0 0 0 3px rgba(56,182,255,0.2);
+}
+
+.btn-guardar, .btn-excel {
+    grid-column: 1 / -1;
+    justify-self: start;
+    background: linear-gradient(135deg, var(--azul-medio), var(--celeste));
+    color: var(--blanco);
+    border: none;
+    padding: 0.7rem 1.6rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.btn-guardar:hover, .btn-excel:hover {
+    filter: brightness(1.08);
+}
+
+.alerta {
+    padding: 0.9rem 1.2rem;
+    border-radius: 8px;
+    margin-bottom: 1.2rem;
+    font-size: 0.92rem;
+}
+
+.alerta-error {
+    background: #fdecea;
+    border-left: 5px solid var(--rojo);
+    color: #942018;
+}
+
+.alerta-error ul {
+    margin: 0;
+    padding-left: 1.2rem;
+}
+
+.alerta-exito {
+    background: #e9f9ef;
+    border-left: 5px solid var(--verde);
+    color: #1e7d43;
+}
+
+.tarjetas-inicio {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.tarjeta {
+    background: var(--blanco);
+    padding: 2rem;
+    width: 220px;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(13,59,102,0.1);
+    text-decoration: none;
+    color: var(--azul-oscuro);
+    font-weight: 600;
+    font-size: 1.05rem;
+    transition: transform 0.15s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-4px);
+}
+
+.leyenda {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.badge {
+    font-weight: bold;
+    padding: 0.15rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.82rem;
+}
+
+.badge-verde {
+    color: var(--verde);
+}
+
+.badge-rojo {
+    color: var(--rojo);
+}
+
+.tarjeta-resumen {
+    background: var(--blanco);
+    border-radius: 10px;
+    padding: 0.9rem 1.2rem;
+    margin-bottom: 0.8rem;
+    box-shadow: 0 2px 8px rgba(13,59,102,0.07);
+    font-size: 0.92rem;
+    line-height: 1.6;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--blanco);
+    margin-top: 1.5rem;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+table th {
+    background: var(--azul-oscuro);
+    color: var(--blanco);
+    padding: 0.6rem;
+    text-align: left;
+    font-size: 0.85rem;
+}
+
+table td {
+    padding: 0.55rem 0.6rem;
+    border-bottom: 1px solid var(--gris-borde);
+    font-size: 0.85rem;
+}
+
+footer {
+    background: var(--azul-oscuro);
+    color: var(--blanco);
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.85rem;
+    margin-top: 2rem;
+}
+
+@media (max-width: 640px) {
+    .formulario { grid-template-columns: 1fr; }
+}
